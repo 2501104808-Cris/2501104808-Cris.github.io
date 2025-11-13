@@ -1,0 +1,162 @@
+/* --- Color Variables for Dark Mode Dynamic Feature --- */
+:root {
+    --primary-color: #3b82f6; /* Elegant Blue Accent */
+    --text-color: #333;
+    --text-light: #555;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Overrides */
+body.dark-mode {
+    --text-color: #f0f0f0;
+    --text-light: #b0b0b0;
+    --bg-color: #1a1a2e; /* Dark Blue Background */
+    --card-bg: #2c2c43;
+    --shadow-color: rgba(255, 255, 255, 0.05);
+}
+
+/* --- Base Styles --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background: var(--card-bg);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    position: sticky; /* Dynamic: Sticky Nav */
+    top: 0;
+    z-index: 1000;
+}
+
+/* ... (omitted navigation styles for brevity) ... */
+
+/* --- Hero Section (Background Image Applied Here) --- */
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative; 
+    padding: 60px 20px; /* Ensure content spacing */
+
+    /* --- BACKGROUND IMAGE PROPERTIES --- */
+    background-image: url('../images/hero-bg.jpg'); /* <-- CHECK THIS PATH */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    /* Ensure text is readable against a dark image */
+    color: white; 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6); 
+}
+
+/* Background Overlay for Readability */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* 40% opaque dark layer */
+    z-index: 1; 
+}
+
+/* Ensure content is layered correctly */
+.hero-content, .hero-image {
+    z-index: 2; 
+}
+
+.hero-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /* Profile picture styled as a circle */
+    object-fit: cover;
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+/* Adjust text colors within hero for dark background */
+.hero-content h1, .hero-content p {
+    color: white;
+}
+.social-links a {
+    color: white; 
+}
+.social-links a:hover {
+    color: var(--primary-color); 
+}
+
+
+/* --- Projects Section (Dynamic Hover & Filtering) --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px); /* Dynamic hover effect */
+    box-shadow: 0 12px 25px var(--shadow-color);
+}
+
+/* ... (omitted remaining skills/footer/media query styles for brevity) ... */
+/* 1. Define the animation keyframes */
+@keyframes backgroundPan {
+    0% {
+        background-position: 0% 0%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* Shift the image diagonally */
+    }
+    100% {
+        background-position: 0% 0%; /* Return to start */
+    }
+}
+
+/* 2. Apply the animation to the Hero Section */
+.hero-section {
+    /* ... (Existing properties) ... */
+    
+    /* Add these lines to activate the animation */
+    animation: backgroundPan 30s linear infinite alternate;
+    background-size: 150%; /* Make the image larger than the container so it can shift */
+}
