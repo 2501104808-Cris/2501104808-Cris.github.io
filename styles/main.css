@@ -17,7 +17,7 @@ body.dark-mode {
     --shadow-color: rgba(255, 255, 255, 0.05);
 }
 
-/* --- Base Styles --- */
+/* --- Base & Utilities --- */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -26,40 +26,26 @@ body {
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
 }
-
-h1, h2, h3 {
-    color: var(--text-color);
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: var(--primary-color);
-    opacity: 0.8;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
+h1, h2, h3 { color: var(--text-color); }
+a { color: var(--primary-color); text-decoration: none; transition: color 0.3s; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
 
 /* --- Header & Navigation --- */
 header {
     background: var(--card-bg);
     box-shadow: 0 2px 4px var(--shadow-color);
-    position: sticky; /* Dynamic: Sticky Nav */
+    position: sticky; 
     top: 0;
     z-index: 1000;
 }
+header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-weight: 700; font-size: 1.8em; }
+.dot { color: var(--primary-color); }
+nav ul { list-style: none; display: flex; gap: 25px; align-items: center; }
+nav a { color: var(--text-color); font-weight: 500; }
+#theme-toggle { background: none; border: none; color: var(--text-color); font-size: 1.2em; cursor: pointer; transition: color 0.3s; }
 
-/* ... (omitted navigation styles for brevity) ... */
-
-/* --- Hero Section (Background Image Applied Here) --- */
+/* --- Hero Section (Background Image and Parallax Effect) --- */
 .hero-section {
     min-height: 80vh;
     display: flex;
@@ -67,16 +53,18 @@ header {
     justify-content: space-between;
     gap: 40px;
     position: relative; 
-    padding: 60px 20px; /* Ensure content spacing */
+    padding: 60px 20px;
 
     /* --- BACKGROUND IMAGE PROPERTIES --- */
-    background-image: url('../images/hero-bg.jpg'); /* <-- CHECK THIS PATH */
+    background-image: url('../images/hero-bg.jpg'); 
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
+    
+    /* DYNAMIC PARALLAX EFFECT */
     background-attachment: fixed;
     
-    /* Ensure text is readable against a dark image */
+    /* Text readability adjustments */
     color: white; 
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6); 
 }
@@ -94,37 +82,26 @@ header {
 }
 
 /* Ensure content is layered correctly */
-.hero-content, .hero-image {
-    z-index: 2; 
-}
+.hero-content, .hero-image { z-index: 2; }
 
+/* Hero Text Styling */
+.hero-content h1, .hero-content p { color: white; }
+.hero-content h1 { font-size: 3.5em; margin: 0.1em 0; }
+#typing-text { color: var(--primary-color); border-right: 3px solid var(--primary-color); padding-right: 5px; }
+
+/* Profile Picture Styling */
 .hero-image img {
     width: 300px;
     height: 300px;
-    border-radius: 50%; /* Profile picture styled as a circle */
+    border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 10px 20px var(--shadow-color);
 }
-
-/* Adjust text colors within hero for dark background */
-.hero-content h1, .hero-content p {
-    color: white;
-}
-.social-links a {
-    color: white; 
-}
-.social-links a:hover {
-    color: var(--primary-color); 
-}
+.social-links a { color: white; font-size: 1.5em; margin-right: 15px; }
 
 
 /* --- Projects Section (Dynamic Hover & Filtering) --- */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-}
-
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 .project-card {
     background: var(--card-bg);
     padding: 30px;
@@ -132,31 +109,15 @@ header {
     box-shadow: 0 4px 12px var(--shadow-color);
     transition: transform 0.3s ease, box-shadow 0.3s;
 }
-
 .project-card:hover {
     transform: translateY(-8px); /* Dynamic hover effect */
     box-shadow: 0 12px 25px var(--shadow-color);
 }
-
-/* ... (omitted remaining skills/footer/media query styles for brevity) ... */
-/* 1. Define the animation keyframes */
-@keyframes backgroundPan {
-    0% {
-        background-position: 0% 0%; /* Start position */
-    }
-    50% {
-        background-position: 100% 50%; /* Shift the image diagonally */
-    }
-    100% {
-        background-position: 0% 0%; /* Return to start */
-    }
+.filter-buttons { text-align: center; margin-bottom: 30px; }
+.filter-buttons button {
+    background: var(--card-bg); color: var(--text-color); border: 1px solid var(--text-light); padding: 8px 18px; margin: 5px; cursor: pointer; border-radius: 20px; transition: background-color 0.3s, color 0.3s;
 }
-
-/* 2. Apply the animation to the Hero Section */
-.hero-section {
-    /* ... (Existing properties) ... */
-    
-    /* Add these lines to activate the animation */
-    animation: backgroundPan 30s linear infinite alternate;
-    background-size: 150%; /* Make the image larger than the container so it can shift */
+.filter-buttons button:hover, .filter-buttons button.active {
+    background: var(--primary-color); color: white; border-color: var(--primary-color);
 }
+/* ... (omitted remaining styles for brevity) ... */
