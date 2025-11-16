@@ -1,376 +1,91 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Professional Portfolio</title>
-    <!-- Load Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons (used for dynamic elements) -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        /* Custom styles for smooth transitions and font */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-        :root {
-            font-family: 'Inter', sans-serif;
-        }
-        .transition-colors {
-            transition: background-color 0.3s, color 0.3s;
-        }
-        /* Custom scrollbar for aesthetics */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background-color: #3b82f6;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-track {
-            background-color: transparent;
-        }
-
-        /* Ensure smooth scrolling behavior across sections */
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-
-        /* Style for the project cards */
-        .project-card {
-            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-    </style>
+    <title>Home | MyPortfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 smooth-scroll">
+<body>
 
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-md transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="#hero" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-                    YourName<span class="text-gray-700 dark:text-gray-300">.dev</span>
-                </a>
-                <div class="flex items-center space-x-4">
-                    <!-- Navigation Links -->
-                    <div class="hidden sm:flex space-x-6">
-                        <a href="#about" class="text-gray-600 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 font-medium transition-colors">About</a>
-                        <a href="#skills" class="text-gray-600 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 font-medium transition-colors">Skills</a>
-                        <a href="#projects" class="text-gray-600 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 font-medium transition-colors">Projects</a>
-                        <a href="#contact" class="text-gray-600 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 font-medium transition-colors">Contact</a>
-                    </div>
-                    <!-- Dark Mode Toggle -->
-                    <button id="theme-toggle" class="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                        <i data-lucide="sun" id="sun-icon" class="h-6 w-6"></i>
-                        <i data-lucide="moon" id="moon-icon" class="h-6 w-6 hidden"></i>
-                    </button>
-                </div>
+    <!-- NAVBAR -->
+    <header>
+        <nav>
+            <h1>MyPortfolio</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <img src="images/profile.jpg" alt="Alycakes Profile Picture" class="profile-img">
+        <h1>Hi, I'm Alycakes</h1>
+        <p>I am a passionate student developer who loves creating clean, modern, and functional digital experiences. I enjoy turning ideas into reality through web development, design, and coding.</p>
+
+        <!-- SOCIAL MEDIA -->
+        <div>
+            <a href="https://facebook.com" target="_blank"><img src="images/facebook.png" alt="Facebook Icon" class="social-icon"></a>
+            <a href="https://instagram.com" target="_blank"><img src="images/instagram.png" alt="Instagram Icon" class="social-icon"></a>
+            <a href="https://github.com" target="_blank"><img src="images/github.png" alt="GitHub Icon" class="social-icon"></a>
+            <a href="https://tiktok.com" target="_blank"><img src="images/tiktok.png" alt="TikTok Icon" class="social-icon"></a>
+        </div>
+
+        <a href="projects.html">View My Work</a>
+    </section>
+
+    <!-- INTRODUCTION SECTION -->
+    <section id="intro">
+        <h2>Welcome!</h2>
+        <p>On this portfolio, you will find my projects, skills, and some personal insights into my journey as a web developer. I aim to grow my skills and deliver high-quality digital solutions that are both functional and visually appealing.</p>
+        <img src="images/intro.jpg" alt="Coding illustration" class="intro-img">
+    </section>
+
+    <!-- FEATURED SKILLS TEASER -->
+    <section id="skills-teaser">
+        <h2>My Skills</h2>
+        <p>HTML, CSS, JavaScript, and Responsive Design are some of my core skills. I am continuously learning and improving to become a full-stack developer.</p>
+        <div class="skills-images">
+            <img src="images/html.png" alt="HTML Icon" class="skill-icon">
+            <img src="images/css.png" alt="CSS Icon" class="skill-icon">
+            <img src="images/js.png" alt="JavaScript Icon" class="skill-icon">
+        </div>
+        <a href="skills.html">See All Skills →</a>
+    </section>
+
+    <!-- FEATURED PROJECTS TEASER -->
+    <section id="projects-teaser">
+        <h2>Featured Projects</h2>
+        <div class="projects-preview">
+            <div class="project">
+                <img src="images/project1.jpg" alt="Project One Screenshot">
+                <h3>Project One</h3>
+                <p>A modern website built with clean, responsive design.</p>
+            </div>
+            <div class="project">
+                <img src="images/project2.jpg" alt="Project Two Screenshot">
+                <h3>Project Two</h3>
+                <p>A student portfolio showcasing HTML, CSS, and JS skills.</p>
             </div>
         </div>
-    </nav>
+        <a href="projects.html">See All Projects →</a>
+    </section>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- CALL TO ACTION -->
+    <section id="cta">
+        <h2>Let's Connect!</h2>
+        <p>If you like my work or want to collaborate, feel free to reach out.</p>
+        <a href="contact.html">Contact Me →</a>
+    </section>
 
-        <!-- 1. Hero Section -->
-        <section id="hero" class="min-h-[calc(100vh-4rem)] flex items-center pt-16 pb-24">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Text Content -->
-                <div class="space-y-6">
-                    <p class="text-xl text-indigo-600 dark:text-indigo-400 font-semibold">Hello, I'm</p>
-                    <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight text-gray-900 dark:text-white">
-                        [Your Name]
-                    </h1>
-                    <h2 class="text-3xl sm:text-4xl font-light text-gray-700 dark:text-gray-300">
-                        A <span class="font-bold text-indigo-600 dark:text-indigo-400">Full-Stack Developer</span>
-                    </h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-lg">
-                        I build dynamic, responsive, and high-performance web applications. Let's create something amazing together.
-                    </p>
-                    <div class="flex space-x-4 pt-4">
-                        <a href="#projects" class="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-300 ease-in-out transform hover:scale-105">View My Work</a>
-                        <a href="#contact" class="px-6 py-3 border border-indigo-600 text-indigo-600 dark:text-indigo-400 dark:border-indigo-400 font-semibold rounded-lg hover:bg-indigo-50 dark:hover:bg-gray-800 transition-colors duration-300">Get In Touch</a>
-                    </div>
-                </div>
-
-                <!-- Image/Placeholder -->
-                <div class="hidden md:block justify-self-end">
-                    <img src="https://placehold.co/400x400/374151/ffffff?text=Your+Photo" alt="Placeholder for your professional headshot" class="rounded-full shadow-2xl border-4 border-indigo-600 dark:border-indigo-400 object-cover w-full max-w-xs lg:max-w-md mx-auto aspect-square" onerror="this.onerror=null; this.src='https://placehold.co/400x400/374151/ffffff?text=Your+Photo'">
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. About Section -->
-        <section id="about" class="py-20 border-t border-gray-200 dark:border-gray-800 transition-colors">
-            <h3 class="text-4xl font-bold mb-8 text-center text-gray-900 dark:text-white">About Me</h3>
-            <div class="max-w-3xl mx-auto text-lg space-y-6 text-gray-700 dark:text-gray-300">
-                <p>
-                    I am a passionate software developer with over [X] years of experience, specializing in modern web technologies. My journey began with a curiosity for how things work, and it quickly grew into a mission to build efficient, scalable, and user-friendly applications.
-                </p>
-                <p>
-                    My professional focus is on delivering end-to-end solutions, from designing the database architecture to crafting responsive and accessible user interfaces. I thrive in collaborative environments and am committed to continuous learning to keep my skills sharp and up-to-date with industry best practices.
-                </p>
-                <p>
-                    When I'm not coding, you can find me [mention a hobby like hiking, reading, or playing music].
-                </p>
-            </div>
-        </section>
-
-        <!-- 3. Skills Section -->
-        <section id="skills" class="py-20 border-t border-gray-200 dark:border-gray-800 transition-colors">
-            <h3 class="text-4xl font-bold mb-12 text-center text-gray-900 dark:text-white">Technical Skills</h3>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-                <!-- Skill Category 1: Frontend -->
-                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div class="flex items-center text-indigo-600 dark:text-indigo-400 mb-4">
-                        <i data-lucide="laptop" class="w-6 h-6 mr-2"></i>
-                        <h4 class="text-xl font-semibold">Frontend</h4>
-                    </div>
-                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-                        <li>JavaScript (ES6+)</li>
-                        <li>React / Vue / Angular</li>
-                        <li>HTML5 & CSS3</li>
-                        <li>Tailwind CSS / Bootstrap</li>
-                    </ul>
-                </div>
-
-                <!-- Skill Category 2: Backend -->
-                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div class="flex items-center text-indigo-600 dark:text-indigo-400 mb-4">
-                        <i data-lucide="server" class="w-6 h-6 mr-2"></i>
-                        <h4 class="text-xl font-semibold">Backend</h4>
-                    </div>
-                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-                        <li>Node.js / Express</li>
-                        <li>Python / Django</li>
-                        <li>Java / Spring Boot</li>
-                        <li>REST APIs</li>
-                    </ul>
-                </div>
-
-                <!-- Skill Category 3: Database & DevOps -->
-                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div class="flex items-center text-indigo-600 dark:text-indigo-400 mb-4">
-                        <i data-lucide="database" class="w-6 h-6 mr-2"></i>
-                        <h4 class="text-xl font-semibold">Data & Ops</h4>
-                    </div>
-                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-                        <li>PostgreSQL / MongoDB</li>
-                        <li>Git / GitHub</li>
-                        <li>AWS / Docker</li>
-                        <li>Firestore (For NoSQL)</li>
-                    </ul>
-                </div>
-
-                <!-- Skill Category 4: Tools & Others -->
-                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div class="flex items-center text-indigo-600 dark:text-indigo-400 mb-4">
-                        <i data-lucide="tool" class="w-6 h-6 mr-2"></i>
-                        <h4 class="text-xl font-semibold">Tools</h4>
-                    </div>
-                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-                        <li>VS Code</li>
-                        <li>Figma / Sketch</li>
-                        <li>Webpack / Vite</li>
-                        <li>TypeScript</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Projects Section (Dynamic Content Here) -->
-        <section id="projects" class="py-20 border-t border-gray-200 dark:border-gray-800 transition-colors">
-            <h3 class="text-4xl font-bold mb-12 text-center text-gray-900 dark:text-white">Featured Projects</h3>
-            <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project cards will be injected here by JavaScript -->
-                <p id="loading-message" class="col-span-full text-center text-gray-500 dark:text-gray-400">Loading projects...</p>
-            </div>
-        </section>
-
-        <!-- 5. Contact Section -->
-        <section id="contact" class="py-20 border-t border-gray-200 dark:border-gray-800 transition-colors">
-            <h3 class="text-4xl font-bold mb-8 text-center text-gray-900 dark:text-white">Get in Touch</h3>
-            <div class="max-w-xl mx-auto bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-2xl transition-colors">
-                <p class="mb-6 text-center text-gray-600 dark:text-gray-300">
-                    Have a project idea or just want to chat? Send me a quick message!
-                </p>
-                <!--
-                    NOTE: True form submission requires a backend server (like AWS Lambda or a simple service)
-                    Since this is a single static HTML file, we are using a 'mailto' link as a simple fallback
-                    to open the user's default email client.
-                -->
-                <form id="contact-form" action="mailto:your.email@example.com" method="GET" enctype="text/plain" class="space-y-4">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
-                        <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 dark:text-white transition-colors">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
-                        <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 dark:text-white transition-colors">
-                    </div>
-                    <div>
-                        <label for="body" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
-                        <textarea id="body" name="body" rows="4" required class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 dark:text-white transition-colors"></textarea>
-                    </div>
-                    <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-300">
-                        Send Message
-                    </button>
-                    <p id="contact-message" class="text-center text-sm pt-2 text-green-600 dark:text-green-400 hidden">Thank you! Your email client should open shortly.</p>
-                </form>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-100 dark:bg-gray-900 py-8 border-t border-gray-200 dark:border-gray-800 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 dark:text-gray-400">
-            <p>&copy; <span id="current-year"></span> [Your Name]. All rights reserved.</p>
-            <p class="text-sm mt-2">Built with HTML, Tailwind CSS, and JavaScript. Hosted on GitHub Pages.</p>
-        </div>
+    <footer>
+        © 2025 MyPortfolio — All Rights Reserved.
     </footer>
 
-    <!-- JavaScript for dynamic features -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize Lucide Icons
-            lucide.createIcons();
-
-            // Set current year in the footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-
-            // --- 1. Dark/Light Mode Toggle Logic ---
-            const themeToggle = document.getElementById('theme-toggle');
-            const sunIcon = document.getElementById('sun-icon');
-            const moonIcon = document.getElementById('moon-icon');
-            const htmlElement = document.documentElement;
-
-            // Check for saved preference or system preference
-            const savedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-                htmlElement.classList.add('dark');
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
-            } else {
-                htmlElement.classList.remove('dark');
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-            }
-
-            // Toggle function
-            themeToggle.addEventListener('click', () => {
-                if (htmlElement.classList.contains('dark')) {
-                    htmlElement.classList.remove('dark');
-                    localStorage.setItem('theme', 'light');
-                    sunIcon.classList.add('hidden');
-                    moonIcon.classList.remove('hidden');
-                } else {
-                    htmlElement.classList.add('dark');
-                    localStorage.setItem('theme', 'dark');
-                    sunIcon.classList.remove('hidden');
-                    moonIcon.classList.add('hidden');
-                }
-            });
-
-            // --- 2. Dynamic Project Loading (Mock Data) ---
-            const projects = [
-                {
-                    title: "E-commerce Platform Redesign",
-                    description: "A complete overhaul of an existing e-commerce site, focusing on performance, mobile responsiveness, and a modern UI.",
-                    technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-                    imagePlaceholder: "https://placehold.co/600x400/3b82f6/ffffff?text=E-commerce+Platform",
-                    githubLink: "https://github.com/yourusername/ecommerce-project",
-                    liveLink: "#"
-                },
-                {
-                    title: "Real-Time Chat Application",
-                    description: "Built a secure, real-time messaging application using websockets for instant communication between users.",
-                    technologies: ["Vue.js", "Express", "Socket.IO", "Redis"],
-                    imagePlaceholder: "https://placehold.co/600x400/10b981/ffffff?text=Chat+App",
-                    githubLink: "https://github.com/yourusername/chat-app",
-                    liveLink: "#"
-                },
-                {
-                    title: "Data Visualization Dashboard",
-                    description: "A tool for visualizing complex datasets using D3.js, featuring interactive charts and customizable reports.",
-                    technologies: ["D3.js", "Python", "Flask", "PostgreSQL"],
-                    imagePlaceholder: "https://placehold.co/600x400/ef4444/ffffff?text=Data+Dashboard",
-                    githubLink: "https://github.com/yourusername/data-dashboard",
-                    liveLink: "#"
-                }
-            ];
-
-            const projectsGrid = document.getElementById('projects-grid');
-            const loadingMessage = document.getElementById('loading-message');
-
-            if (loadingMessage) {
-                loadingMessage.remove(); // Remove loading message once we have data
-            }
-
-            projects.forEach(project => {
-                const techBadges = project.technologies.map(tech =>
-                    `<span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-indigo-400 transition-colors">${tech}</span>`
-                ).join('');
-
-                const projectHTML = `
-                    <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700">
-                        <!-- Image placeholder with fallback -->
-                        <img src="${project.imagePlaceholder}" alt="${project.title}" class="w-full h-48 object-cover border-b border-gray-200 dark:border-gray-700" onerror="this.onerror=null; this.src='https://placehold.co/600x400/374151/ffffff?text=${encodeURIComponent(project.title)}';">
-
-                        <div class="p-6 space-y-4">
-                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">${project.title}</h4>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm">${project.description}</p>
-                            <div class="flex flex-wrap pt-2">${techBadges}</div>
-                            <div class="flex space-x-4 pt-3">
-                                <a href="${project.githubLink}" target="_blank" class="flex items-center text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-medium transition-colors">
-                                    <i data-lucide="github" class="w-4 h-4 mr-1"></i> Code
-                                </a>
-                                <a href="${project.liveLink}" target="_blank" class="flex items-center text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-medium transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4 mr-1"></i> Live Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                projectsGrid.insertAdjacentHTML('beforeend', projectHTML);
-            });
-
-            // Re-initialize Lucide Icons for the new elements
-            lucide.createIcons();
-
-            // --- 3. Contact Form Submission Feedback (for mailto) ---
-            const contactForm = document.getElementById('contact-form');
-            const contactMessage = document.getElementById('contact-message');
-
-            contactForm.addEventListener('submit', (e) => {
-                // Prevent default submission to show message first
-                e.preventDefault();
-
-                // Construct the mailto link from form data
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const body = document.getElementById('body').value;
-
-                // Simple encoding for mailto subject/body
-                const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
-                const mailtoLink = `mailto:your.email@example.com?subject=${subject}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${body}`)}`;
-
-                // Show success message
-                contactMessage.classList.remove('hidden');
-
-                // Delay the actual mailto trigger slightly to let the user see the message
-                setTimeout(() => {
-                    window.location.href = mailtoLink;
-                    // Reset form immediately after triggering mailto
-                    contactForm.reset();
-                    contactMessage.classList.add('hidden');
-                }, 500);
-            });
-        });
-    </script>
 </body>
 </html>
